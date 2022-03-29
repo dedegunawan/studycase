@@ -18,6 +18,7 @@ class NpmMiddleware
     public function handle(Request $request, Closure $next)
     {
         $npm = '197006078';
+        dd(!$request->header('npm'), $request->header('npm') != $npm);
         if (
             !$request->header('npm') ||
             $request->header('npm') != $npm
